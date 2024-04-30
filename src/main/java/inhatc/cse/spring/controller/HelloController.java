@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller //@RestController --> 클라이언트 별도
 public class HelloController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public PersonDto hello(){
+    public String hello(Model model){
         PersonDto person = new PersonDto("김용진", 20, 170.4);
-        return person;
+        model.addAttribute("name", person);
+        return "index";
     }
 }
