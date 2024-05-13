@@ -4,6 +4,6 @@
 <configuration>
     <!-- 별칭-->
     <typeAliases>
-        <typeAlias type="inhatc/cse/spring/dto/MemberDto" alias="member" />
+        <typeAlias type="inhatc.cse.spring.dto.MemberDto" alias="member" />
     </typeAliases>
 </configuration>
