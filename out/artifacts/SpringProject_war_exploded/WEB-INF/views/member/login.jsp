@@ -12,5 +12,10 @@
 </head>
 <body>
     <h1>로그인 페이지</h1>
+    <form action="/member/login" method="post">
+        <input type="text" name="email" placeholder="이메일">
+        <input type="text" name="password" placeholder="비밀번호">
+        <input type="submit" value="로그인">
+    </form>
 </body>
 </html>
