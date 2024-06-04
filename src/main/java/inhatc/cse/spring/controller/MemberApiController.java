@@ -16,9 +16,17 @@ public class MemberApiController {
 
     private final MemberService memberService;
     @PostMapping("/login")
-    public ResponseEntity<?> login(@ModelAttribute MemberDto memberDto){
-        System.out.println(memberDto);
+    public ResponseEntity<?> login(@RequestBody MemberDto memberDto){
+        System.out.println("=======================>" + memberDto);
         boolean result = memberService.login(memberDto);
         return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @PostMapping("/save")
+    public ResponseEntity<?> memberInsert(@RequestBody MemberDto memberDto) {
+        System.out.println("============" + memberDto);
+        int result = memberService.save(memberDto);
+
+        return new ResponseEntity<>(memberDto, HttpStatus.OK);
     }
 }
