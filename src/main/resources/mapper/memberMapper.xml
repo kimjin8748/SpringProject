@@ -14,4 +14,9 @@
     <select id="findAll" resultType="member">
         SELECT * FROM member_table;
     </select>
+    <select id="findId" parameterType="int" resultType="member">
+        SELECT *
+        FROM member_table
+        WHERE id = #{id};
+    </select>
 </mapper>

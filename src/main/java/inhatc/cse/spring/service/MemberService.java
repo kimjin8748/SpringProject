@@ -29,4 +29,8 @@ public class MemberService {
     public List<MemberDto> findAll() {
         return memberRepository.findAll();
     }
+
+    public MemberDto findId(int id) {
+        return memberRepository.findId(id);
+    }
 }

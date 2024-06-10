@@ -27,4 +27,8 @@ public class MemberRepository {
     public List<MemberDto> findAll() {
         return sqlSession.selectList("Member.findAll");
     }
+
+    public MemberDto findId(int id) {
+        return sqlSession.selectOne("Member.findId", id);
+    }
 }
