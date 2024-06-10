@@ -6,7 +6,7 @@
     <!-- 데이터베이스 이름 및 계정 확인 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/spring_member?useSSL=false&amp;serverTimezone=Asia/Seoul&amp;allowPublicKeyRetrieval=true" />
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_member?useSSL=false&amp;serverTimezone=Asia/Seoul&amp;allowPublicKeyRetrieval=true&amp;characterEncoding=UTF-8" />
         <property name="username" value="root"/>
         <property name="password" value="1234"/>
     </bean>

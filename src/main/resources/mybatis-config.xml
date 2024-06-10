@@ -6,5 +6,6 @@
     <typeAliases>
         <typeAlias type="inhatc.cse.spring.dto.MemberDto" alias="member" />
         <typeAlias type="inhatc.cse.spring.dto.BookDto" alias="book" />
+        <typeAlias type="inhatc.cse.spring.dto.BookResponseDto" alias="bookResponse" />
     </typeAliases>
 </configuration>

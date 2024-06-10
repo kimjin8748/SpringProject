@@ -3,7 +3,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Book">
     <insert id="save" parameterType="book">
-        INSERT INTO member_table (bookname, writer, bookImagePath)
+        INSERT INTO book_table (bookname, writer, bookImagePath)
         VALUES(#{bookname}, #{writer}, #{bookImagePath})
     </insert>
+    <select id="findAll" resultType="bookResponse">
+        SELECT * FROM book_table;
+    </select>
+    <select id="findId" parameterType="int" resultType="bookResponse">
+        SELECT *
+        FROM book_table
+        WHERE id = #{id};
+    </select>
 </mapper>
