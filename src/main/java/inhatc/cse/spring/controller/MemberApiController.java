@@ -23,6 +23,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -95,13 +96,23 @@ public class MemberApiController {
 
     private String saveFile(MultipartFile file) {
         String fileName = file.getOriginalFilename();
-        String filePath = "C:/Spring_WS/SpringProject/src/main/java/inhatc/cse/spring/repository/images/" + fileName;
+
+        String fileExtension = "";
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex > 0) {
+            fileExtension = fileName.substring(dotIndex);
+        }
+
+        // UUID로 새로운 파일 이름을 생성합니다.
+        String uuid = UUID.randomUUID().toString();
+        String newFileName = uuid + fileExtension;
+        String filePath = "C:/Spring_WS/SpringProject/src/main/java/inhatc/cse/spring/repository/images/" + newFileName;
         try {
             file.transferTo(new File(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return fileName;
+        return newFileName;
     }
 
     @GetMapping("bookList")
